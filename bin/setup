@@ -7,6 +7,7 @@ set -o pipefail
 echo -e "Cloning ninjam repository...\n"
 
 mkdir -p build
+rm -rf build/ninjam
 git clone https://github.com/justinfrankel/ninjam.git build/ninjam
 
 echo -e "\nBuilding server...\n"
