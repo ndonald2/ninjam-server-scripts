@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -e
+set -o pipefail
+
+# Clone
+echo -e "Cloning ninjam repository...\n"
+
+mkdir -p build
+git clone https://github.com/justinfrankel/ninjam.git build/ninjam
+
+echo -e "\nBuilding server...\n"
+
+# Build
+make -C build/ninjam/ninjam/server 
+
+# Copy executable
+cp build/ninjam/ninjam/server/ninjamsrv .

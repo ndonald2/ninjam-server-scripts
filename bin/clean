@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+set -o pipefail
+
+echo "Removing build dir contents"
+rm -rf build/*
+
+echo "Removing executable"
+rm -f ninjamsrv
