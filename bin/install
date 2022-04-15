@@ -27,6 +27,7 @@ echo -e "Config file copied to ${CFG_PATH}/config.cfg"
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     cp -f ninjam.service /etc/systemd/system/ninjam.service
     chmod 664 /etc/systemd/system/ninjam.service
+    systemctl daemon-reload
     systemctl enable ninjam
-    echo -e "Ninjam service daemon installed and enabled. Start with `sudo systemctl start ninjam`."
+    echo -e "Ninjam service daemon installed and enabled."
 fi
