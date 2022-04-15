@@ -1,0 +1,9 @@
+[Unit]
+Description=Ninjam Server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/ninjam /etc/ninjam/config.cfg
+User=root
+Group=root

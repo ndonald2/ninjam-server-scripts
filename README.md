@@ -23,7 +23,7 @@ Run `bin/build` to clone ninjam and build the server. On success an application 
 `ninjamsrv` should be produced in this repo's checkout location.
 
 Run `sudo bin/install` to copy application binary and config file to recommended locations.
-On Linux this script also installs an `init.d` service (see below for more details).
+On Linux this script also installs a `systemd` service (see below for more details).
 
 Run `bin/clean` to clean up build artifacts including the server application binary.
 
@@ -60,6 +60,11 @@ TODO
 
 On Linux we can use any number of service management systems to start the server on
 system boot and manage it using common commands. The install script installs the server
-as an `init.d` service, which can be managed with the following commands:
+as a `systemd` service, which will start automatically on boot once the network is available.
+The service can be manually managed with the following commands:
 
-``
+`sudo systemctl (start|stop|restart) ninjam` -- start/stop/restart service
+
+`systemctl status ninjam` -- Get service status
+
+`journalctl -u ninjam` -- Show logs

@@ -23,3 +23,10 @@ echo -e "Server application copied to ${SYMLINK_PATH}/${APP_FILENAME}"
 mkdir -p "${CFG_PATH}"
 cp -f config.cfg "${CFG_PATH}/config.cfg"
 echo -e "Config file copied to ${CFG_PATH}/config.cfg"
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    cp -f ninjam.service /etc/systemd/system/ninjam.service
+    chmod 664 /etc/systemd/system/ninjam.service
+    systemctl enable ninjam
+    echo -e "Ninjam service daemon installed and enabled. Start with `sudo systemctl start ninjam`."
+fi
