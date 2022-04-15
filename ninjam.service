@@ -4,7 +4,7 @@ After=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/ninjam /etc/ninjam/config.cfg
+ExecStart=/usr/bin/ninjamsrv /etc/ninjam/config.cfg
 Restart=on-failure
 RestartSec=10
 User=root
