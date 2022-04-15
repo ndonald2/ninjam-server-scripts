@@ -7,8 +7,6 @@ Type=simple
 ExecStart=/usr/bin/ninjamsrv /etc/ninjam/config.cfg
 Restart=on-failure
 RestartSec=10
-User=root
-Group=root
 
 [Install]
 WantedBy=multi-user.target
